@@ -15,11 +15,11 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
     const handleUpdate = e => {
         e.preventDefault();
 
-        if (!firstName || !lastName || !bookname || !bookauthor || !dateofreturn || !dateofborrow ) {
+        if (!bookname || !bookauthor || !dateofreturn || !dateofborrow ) {
             return Swal.fire({
                 icon: 'error',
                 title: 'Error!',
-                text: 'All fields are required.',
+                text: 'This fields are required except firstname lastname.',
                 showConfirmButton: true
             });
         }

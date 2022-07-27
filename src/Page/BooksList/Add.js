@@ -19,11 +19,11 @@ function Add({ employees, setEmployees, setIsAdding }) {
 
     const handleAdd = e => {
         e.preventDefault();
-        if (!firstName || !lastName || !bookname || !bookauthor || !dateofreturn || !dateofborrow ) {
+        if (!bookname || !bookauthor || !dateofreturn || !dateofborrow ) {
             return Swal.fire({
                 icon: 'error',
                 title: 'Error!',
-                text: 'All fields are required.',
+                text: 'All fields are required except firstname lastname.',
                 showConfirmButton: true
             });
         }
@@ -58,6 +58,8 @@ function Add({ employees, setEmployees, setIsAdding }) {
                 <h1>Add Books</h1>
                 <label htmlFor="firstName">First Name</label>
                 <input
+                
+                    placeholder='optional'
                     id="firstName"
                     type="text"
                     ref={textInput}
@@ -67,6 +69,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
                 />
                 <label htmlFor="lastName">Last Name</label>
                 <input
+                    placeholder='optional'
                     id="lastName"
                     type="text"
                     name="lastName"
